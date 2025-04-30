@@ -45,11 +45,13 @@ function generateTags(keyword) {
         tagContainer.appendChild(tagElement);
     });
 
-    if (baseTags.length > 0) {
-        copyButton.disabled = false;
-    } else {
-        tagContainer.innerHTML = '<p style="color: #606770;">No tags generated for this keyword.</p>';
-    }
+   if (baseTags.length > 0) {
+    copyButton.style.display = 'inline-block';
+} else {
+    tagContainer.innerHTML = '<p style="color: #606770;">No tags generated for this keyword.</p>';
+    copyButton.style.display = 'none';
+}
+
 }
 
 generateButton.addEventListener('click', () => {
